@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>УАҚЫП Қоры — Қазақстан Мұсылмандары Діни Басқармасы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-900:#06372a;
+    --green-800:#0a4d3a;
+    --green-700:#0f6a4f;
+    --green-600:#198463;
+    --green-500:#27a07b;
+    --green-50:#e8f5ef;
+    --gold-500:#c9a14a;
+    --gold-400:#d8b974;
+    --gold-300:#e7d39a;
+    --cream:#f7f3ea;
+    --ink-900:#0c1c17;
+    --ink-700:#314940;
+    --ink-500:#6c7e76;
+    --line:rgba(12,28,23,.08);
+    --shadow-sm:0 4px 14px rgba(6,55,42,.08);
+    --shadow-md:0 14px 40px rgba(6,55,42,.14);
+    --shadow-lg:0 30px 80px rgba(6,55,42,.22);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink-900);
+    background:var(--cream);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:-.01em;margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1240px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green-700)}
+  .gold{color:var(--gold-500)}
+
+  /* ───── Glass nav (iOS) ───── */
+  .nav-wrap{position:fixed;top:14px;left:0;right:0;z-index:100;display:flex;justify-content:center;padding:0 16px}
+  .nav{
+    display:flex;align-items:center;gap:8px;
+    padding:8px 8px 8px 18px;
+    background:rgba(255,255,255,.55);
+    backdrop-filter:saturate(160%) blur(22px);
+    -webkit-backdrop-filter:saturate(160%) blur(22px);
+    border:1px solid rgba(255,255,255,.6);
+    box-shadow:0 10px 30px rgba(6,55,42,.10), inset 0 1px 0 rgba(255,255,255,.7);
+    border-radius:999px;
+    width:100%;max-width:1200px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--green-900);padding-right:8px;border-right:1px solid var(--line)}
+  .brand-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--green-700),var(--green-900));display:grid;place-items:center;color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+  .brand small{display:block;font-size:10px;font-weight:500;color:var(--ink-500);letter-spacing:.18em;text-transform:uppercase}
+  .nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0 6px;flex:1;justify-content:center;flex-wrap:wrap}
+  .nav li a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-700);transition:all .2s}
+  .nav li a:hover{background:rgba(15,106,79,.08);color:var(--green-800)}
+  .glass-btn{
+    padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;
+    background:linear-gradient(180deg,rgba(15,106,79,.95),rgba(10,77,58,.95));
+    color:#fff;border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 8px 22px rgba(10,77,58,.35),inset 0 1px 0 rgba(255,255,255,.35);
+    cursor:pointer;transition:transform .2s, box-shadow .2s;
+    backdrop-filter:blur(10px);
+  }
+  .glass-btn:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(10,77,58,.45),inset 0 1px 0 rgba(255,255,255,.4)}
+  .glass-btn.ghost{background:rgba(255,255,255,.55);color:var(--green-900);border:1px solid rgba(12,28,23,.08);box-shadow:0 6px 18px rgba(6,55,42,.08),inset 0 1px 0 rgba(255,255,255,.7)}
+  .glass-btn.gold{background:linear-gradient(180deg,#dcb878,#c9a14a);color:#3a2a06;border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 22px rgba(201,161,74,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+  .nav-cta{display:flex;gap:6px;flex-shrink:0}
+  .nav-btn{padding:9px 14px;font-size:12px;letter-spacing:.02em;white-space:nowrap}
+
+  /* ───── Hero ───── */
+  .hero{
+    position:relative;padding:160px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(201,161,74,.18), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(15,106,79,.18), transparent 60%),
+      linear-gradient(180deg,#0a4d3a 0%,#06372a 100%);
+    color:#f5f1e3;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;opacity:.18;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23d8b974' stroke-width='1'><path d='M80 0 L160 80 L80 160 L0 80 Z'/><path d='M80 20 L140 80 L80 140 L20 80 Z'/><circle cx='80' cy='80' r='30'/><path d='M50 80 L80 50 L110 80 L80 110 Z'/></g></svg>");
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(40px,6vw,80px);line-height:1.02;color:#fff;margin-bottom:20px}
+  .hero h1 span{background:linear-gradient(180deg,#e7d39a,#c9a14a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:18px;max-width:560px;color:rgba(245,241,227,.82);margin:0 0 32px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
+  .stat .num{font-family:'Playfair Display',serif;font-size:36px;color:#fff;font-weight:700}
+  .stat .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:rgba(245,241,227,.65)}
+
+  .hero-card{
+    position:relative;border-radius:28px;padding:28px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(28px) saturate(160%);
+    -webkit-backdrop-filter:blur(28px) saturate(160%);
+    box-shadow:0 30px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.25);
+    color:#fff;
+  }
+  .hero-card .row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
+  .hero-card .row:last-child{border-bottom:0}
+  .hero-card .row b{font-weight:600}
+  .hero-card .row .v{color:var(--gold-300);font-family:'Playfair Display',serif;font-size:20px}
+  .hero-card .head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .hero-card .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12px;color:rgba(255,255,255,.85)}
+  .dot{width:8px;height:8px;border-radius:50%;background:#7ee2b4;box-shadow:0 0 0 4px rgba(126,226,180,.18)}
+
+  /* ───── Sections ───── */
+  section{padding:96px 0}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+  .section-head h2{font-size:clamp(30px,4vw,48px);max-width:720px;color:var(--green-900)}
+  .section-head p{max-width:420px;color:var(--ink-500);margin:0}
+
+  /* ───── About ───── */
+  .about{background:#fff}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about p{color:var(--ink-700);font-size:17px}
+  .panel{
+    border-radius:24px;padding:28px;background:linear-gradient(160deg,#0f6a4f,#06372a);color:#fff;
+    box-shadow:var(--shadow-md);position:relative;overflow:hidden;
+  }
+  .panel::after{content:"";position:absolute;inset:auto -40px -60px auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(201,161,74,.5),transparent 60%);filter:blur(10px)}
+  .panel h3{font-size:24px;margin-bottom:12px;color:#fff}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .pillar{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:14px;border-radius:14px;backdrop-filter:blur(6px)}
+  .pillar b{display:block;font-size:13px;color:var(--gold-300);margin-bottom:4px;letter-spacing:.06em;text-transform:uppercase}
+  .pillar span{font-size:13px;color:rgba(255,255,255,.85)}
+
+  /* ───── Partner: BCC Bank ───── */
+  .partner{background:#fff;padding-top:0}
+  .partner-card{
+    position:relative;overflow:hidden;border-radius:32px;padding:48px;
+    background:linear-gradient(135deg,#06372a 0%,#0a4d3a 55%,#0f6a4f 100%);
+    box-shadow:var(--shadow-lg);color:#fff;
+  }
+  .partner-card::before{
+    content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><g fill='none' stroke='%23d8b974' stroke-width='1'><path d='M70 0 L140 70 L70 140 L0 70 Z'/><circle cx='70' cy='70' r='34'/></g></svg>");
+  }
+  .partner-card::after{content:"";position:absolute;top:-80px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(201,161,74,.45),transparent 62%);filter:blur(6px)}
+  .partner-inner{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:44px;align-items:center}
+  .partner-badge{
+    position:absolute;top:-14px;left:0;display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(180deg,#dcb878,#c9a14a);color:#3a2a06;
+    padding:8px 18px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    box-shadow:0 10px 24px rgba(201,161,74,.45),inset 0 1px 0 rgba(255,255,255,.5);
+  }
+  .lockup{display:flex;align-items:center;gap:22px}
+  .lockup .logo-chip{
+    display:grid;place-items:center;text-align:center;
+    width:124px;height:124px;border-radius:26px;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 30px rgba(0,0,0,.25);
+  }
+  .lockup .logo-chip .l-mark{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#d8b974,#c9a14a);display:grid;place-items:center;margin-bottom:8px}
+  .lockup .logo-chip .l-name{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:#fff;line-height:1}
+  .lockup .logo-chip .l-sub{font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:3px}
+  .lockup .logo-chip.bcc .l-mark{background:#fff}
+  .lockup .logo-chip.bcc .l-name{color:#fff;font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.02em}
+  .lockup .x{font-family:'Playfair Display',serif;font-size:34px;color:var(--gold-300);font-weight:300}
+  .partner-text .eyebrow{color:var(--gold-300)}
+  .partner-text h2{font-size:clamp(26px,3.4vw,40px);color:#fff;margin:8px 0 10px}
+  .partner-text p{color:rgba(245,241,227,.82);font-size:15px;max-width:560px;margin:0}
+  .partner-feats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .partner-feats span{
+    display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#fff;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+    padding:7px 13px;border-radius:999px;backdrop-filter:blur(8px);
+  }
+  .partner-feats span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold-300)}
+  .partner-aside{display:flex;flex-direction:column;gap:12px;min-width:210px}
+  .partner-stat{
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+    border-radius:18px;padding:16px 18px;backdrop-filter:blur(10px);
+  }
+  .partner-stat .pv{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-300);font-weight:700}
+  .partner-stat .pl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+  .partner-card .glass-btn{margin-top:4px}
+
+  /* ───── Projects ───── */
+  .projects{background:linear-gradient(180deg,var(--cream),#fff)}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .proj-card{
+    background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);transition:transform .25s, box-shadow .25s;
+  }
+  .proj-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .proj-img{height:180px;position:relative;display:grid;place-items:center;color:#fff;overflow:hidden}
+  .proj-img.a{background:linear-gradient(135deg,#0f6a4f,#06372a)}
+  .proj-img.b{background:linear-gradient(135deg,#198463,#0a4d3a)}
+  .proj-img.c{background:linear-gradient(135deg,#27a07b,#0f6a4f)}
+  .proj-img.d{background:linear-gradient(135deg,#c9a14a,#7d5e1f)}
+  .proj-img.e{background:linear-gradient(135deg,#0a4d3a,#314940)}
+  .proj-img.f{background:linear-gradient(135deg,#06372a,#0f6a4f)}
+  .proj-img svg{position:absolute;opacity:.18;width:300px;height:300px}
+  .proj-img .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:6px 10px;border-radius:999px;font-size:11px;backdrop-filter:blur(8px);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .proj-body{padding:20px 22px 24px}
+  .proj-body h3{font-size:20px;margin-bottom:8px;color:var(--green-900)}
+  .proj-body p{color:var(--ink-500);font-size:14px;margin:0 0 14px}
+  .progress{height:8px;background:#eef0ec;border-radius:999px;overflow:hidden;margin-bottom:8px}
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,#198463,#27a07b);border-radius:999px}
+  .proj-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-500)}
+
+  /* ───── Roadmap ───── */
+  .roadmap{background:#fff}
+  .road-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+  .road-grid::before{content:"";position:absolute;left:0;right:0;top:34px;height:2px;background:repeating-linear-gradient(90deg,var(--gold-400) 0 8px,transparent 8px 16px)}
+  .road{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;box-shadow:var(--shadow-sm)}
+  .road .yr{display:inline-block;background:linear-gradient(180deg,#0f6a4f,#06372a);color:#fff;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.1em;margin-bottom:14px;box-shadow:0 6px 16px rgba(15,106,79,.3)}
+  .road h4{font-size:18px;color:var(--green-900);margin-bottom:8px;font-family:'Inter',sans-serif;font-weight:700}
+  .road ul{margin:8px 0 0;padding-left:18px;color:var(--ink-700);font-size:14px}
+  .road ul li{margin-bottom:4px}
+  .road.now{border:1px solid var(--green-600);box-shadow:0 0 0 6px rgba(39,160,123,.10),var(--shadow-md)}
+
+  /* ───── News ───── */
+  .news{background:linear-gradient(180deg,#fff,var(--cream))}
+  .news-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:22px}
+  .news-card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .news-card .img{height:200px;background:linear-gradient(135deg,#0f6a4f,#06372a);position:relative;color:#fff;padding:18px;display:flex;align-items:flex-end}
+  .news-card.feat .img{height:280px}
+  .news-card .img .date{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600}
+  .news-card .body{padding:20px 22px 24px}
+  .news-card .body h3{font-size:18px;margin-bottom:8px;color:var(--green-900)}
+  .news-card.feat .body h3{font-size:24px}
+  .news-card .body p{color:var(--ink-500);font-size:14px;margin:0}
+
+  /* ───── Donors / Waqf timeline ───── */
+  .donors{background:#fff;position:relative;overflow:hidden}
+  .donors::before{content:"";position:absolute;inset:auto -120px -120px auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(201,161,74,.16),transparent 60%)}
+  .timeline{position:relative;display:grid;gap:18px}
+  .tl-row{
+    display:grid;grid-template-columns:160px 1fr auto;align-items:center;gap:24px;
+    padding:18px 22px;border-radius:18px;background:#fff;border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);transition:transform .2s, box-shadow .2s;
+  }
+  .tl-row:hover{transform:translateX(4px);box-shadow:var(--shadow-md)}
+  .tl-row .yr{font-family:'Playfair Display',serif;font-size:32px;color:var(--green-800);font-weight:700;display:flex;align-items:center;gap:10px}
+  .tl-row .yr::before{content:"";width:10px;height:10px;background:var(--gold-500);border-radius:50%;box-shadow:0 0 0 4px rgba(201,161,74,.18)}
+  .tl-row .who{font-weight:600;color:var(--ink-900);font-size:16px;margin-bottom:4px}
+  .tl-row .what{font-size:14px;color:var(--ink-500)}
+  .tl-row .amount{font-family:'Playfair Display',serif;color:var(--green-700);font-size:20px;font-weight:600}
+
+  /* ───── Team ───── */
+  .team{background:linear-gradient(180deg,var(--cream),#fff)}
+  .lead-card{
+    display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center;
+    background:linear-gradient(135deg,#0a4d3a,#06372a);color:#fff;border-radius:28px;padding:36px;
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden;margin-bottom:36px;
+  }
+  .lead-card::after{content:"";position:absolute;top:-60px;right:-40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(201,161,74,.4),transparent 60%);filter:blur(8px)}
+  .avatar{
+    width:200px;height:200px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold-300),var(--gold-500));
+    display:grid;place-items:center;color:#06372a;font-family:'Playfair Display',serif;font-size:64px;font-weight:700;
+    border:4px solid rgba(255,255,255,.2);box-shadow:inset 0 4px 0 rgba(255,255,255,.3),0 20px 40px rgba(0,0,0,.3);
+  }
+  .lead-card .role{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-300);margin-bottom:8px}
+  .lead-card h3{font-size:36px;color:#fff;margin-bottom:6px}
+  .lead-card .title-pos{color:rgba(255,255,255,.7);font-size:15px;margin-bottom:16px}
+  .lead-card p{color:rgba(255,255,255,.85);font-size:15px;max-width:560px}
+
+  .reps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .rep{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;
+    box-shadow:var(--shadow-sm);transition:transform .2s, box-shadow .2s;
+  }
+  .rep:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .rep .av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#198463,#0a4d3a);color:#fff;display:grid;place-items:center;font-weight:700;font-size:20px;margin-bottom:14px}
+  .rep .city{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-500);font-weight:600;margin-bottom:6px}
+  .rep .nm{font-weight:600;color:var(--ink-900);margin-bottom:2px}
+  .rep .ps{font-size:13px;color:var(--ink-500)}
+
+  /* ───── Education ───── */
+  .edu{background:#fff;position:relative;overflow:hidden}
+  .edu::before{content:"";position:absolute;inset:-100px auto auto -100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(15,106,79,.12),transparent 60%)}
+  .edu-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;position:relative;z-index:2}
+  .edu-tab{
+    padding:12px 22px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;
+    background:rgba(255,255,255,.6);backdrop-filter:blur(14px);
+    border:1px solid var(--line);color:var(--ink-700);transition:all .2s;
+  }
+  .edu-tab.active{background:linear-gradient(180deg,#0f6a4f,#06372a);color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(10,77,58,.3),inset 0 1px 0 rgba(255,255,255,.25)}
+  .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:2}
+  .edu-card{
+    background:rgba(255,255,255,.85);backdrop-filter:blur(16px);
+    border:1px solid var(--line);border-radius:22px;padding:28px;
+    box-shadow:var(--shadow-sm);transition:all .25s;position:relative;overflow:hidden;
+  }
+  .edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(15,106,79,.2)}
+  .edu-card .ic{
+    width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--green-700),var(--green-900));color:#fff;
+    margin-bottom:18px;box-shadow:0 8px 18px rgba(10,77,58,.25),inset 0 1px 0 rgba(255,255,255,.3);
+  }
+  .edu-card.gold .ic{background:linear-gradient(135deg,var(--gold-400),var(--gold-500));color:#3a2a06;box-shadow:0 8px 18px rgba(201,161,74,.35),inset 0 1px 0 rgba(255,255,255,.4)}
+  .edu-card h3{font-size:20px;margin-bottom:8px;color:var(--green-900);font-family:'Inter',sans-serif;font-weight:700}
+  .edu-card p{color:var(--ink-500);font-size:14px;margin:0 0 12px}
+  .edu-card ul{margin:0;padding-left:18px;color:var(--ink-700);font-size:13.5px}
+  .edu-card ul li{margin-bottom:4px}
+
+  /* ───── CTA ───── */
+  .cta{background:linear-gradient(135deg,#06372a,#0a4d3a);color:#fff;position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;inset:0;opacity:.15;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%23d8b974' stroke-width='1'><circle cx='100' cy='100' r='80'/><circle cx='100' cy='100' r='60'/><circle cx='100' cy='100' r='40'/><path d='M20 100 L180 100 M100 20 L100 180 M30 30 L170 170 M170 30 L30 170'/></g></svg>")}
+  .cta-inner{display:flex;justify-content:space-between;align-items:center;gap:36px;flex-wrap:wrap;position:relative}
+  .cta h2{font-size:clamp(28px,4vw,48px);color:#fff;max-width:640px}
+  .cta p{color:rgba(255,255,255,.8);margin-top:10px;max-width:520px}
+
+  /* ───── Footer ───── */
+  footer{background:#06372a;color:rgba(255,255,255,.7);padding:60px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+  .foot-grid h4{color:#fff;font-family:'Inter',sans-serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+  .foot-grid ul{list-style:none;margin:0;padding:0;font-size:14px}
+  .foot-grid ul li{padding:5px 0}
+  .foot-grid a:hover{color:var(--gold-300)}
+  .foot-bot{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:12px}
+
+  /* ───── Donation modal (iOS glass) ───── */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:200;display:none;
+    align-items:center;justify-content:center;padding:24px;
+    background:rgba(6,55,42,.45);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  .modal-overlay.open{display:flex;animation:fadeIn .25s ease}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal{
+    width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+    background:rgba(255,255,255,.82);
+    backdrop-filter:saturate(180%) blur(30px);-webkit-backdrop-filter:saturate(180%) blur(30px);
+    border:1px solid rgba(255,255,255,.7);
+    box-shadow:0 40px 100px rgba(6,55,42,.45), inset 0 1px 0 rgba(255,255,255,.8);
+    border-radius:28px;padding:34px;position:relative;
+    animation:popIn .3s cubic-bezier(.2,.9,.3,1.2);
+  }
+  @keyframes popIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+  .modal-close{
+    position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;
+    background:rgba(12,28,23,.06);border:1px solid var(--line);cursor:pointer;
+    display:grid;place-items:center;color:var(--ink-700);transition:all .2s;
+  }
+  .modal-close:hover{background:rgba(12,28,23,.12);transform:rotate(90deg)}
+  .modal .eyebrow{display:block;margin-bottom:6px}
+  .modal h3{font-size:26px;color:var(--green-900);margin-bottom:6px}
+  .modal .sub{color:var(--ink-500);font-size:14px;margin-bottom:22px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;font-weight:600;color:var(--ink-700);margin-bottom:6px;letter-spacing:.02em}
+  .field label .req{color:#c0492f}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border-radius:14px;font-family:inherit;font-size:14px;
+    background:rgba(255,255,255,.7);border:1px solid var(--line);color:var(--ink-900);
+    transition:border-color .2s, box-shadow .2s;outline:none;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    border-color:var(--green-600);box-shadow:0 0 0 4px rgba(39,160,123,.14);background:#fff;
+  }
+  .field textarea{resize:vertical;min-height:78px}
+  .modal .glass-btn{width:100%;padding:14px;font-size:15px;margin-top:6px}
+  .modal .consent{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:var(--ink-500);margin:4px 0 16px}
+  .modal .consent input{margin-top:2px;accent-color:var(--green-600)}
+  .modal-success{display:none;text-align:center;padding:20px 0}
+  .modal-success .check{
+    width:72px;height:72px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#198463,#0a4d3a);color:#fff;
+    box-shadow:0 16px 36px rgba(10,77,58,.4),inset 0 1px 0 rgba(255,255,255,.3);
+  }
+  .modal-success h3{margin-bottom:8px}
+  .modal-success p{color:var(--ink-500);font-size:14px}
+
+  /* Responsive */
+  @media (max-width: 980px){
+    .hero-grid,.about-grid{grid-template-columns:1fr}
+    .proj-grid,.edu-grid{grid-template-columns:repeat(2,1fr)}
+    .road-grid{grid-template-columns:repeat(2,1fr)}
+    .road-grid::before{display:none}
+    .news-grid{grid-template-columns:1fr 1fr}
+    .reps-grid{grid-template-columns:repeat(2,1fr)}
+    .lead-card{grid-template-columns:1fr;text-align:center}
+    .avatar{margin:0 auto}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .partner-card{padding:40px 28px}
+    .partner-inner{grid-template-columns:1fr;gap:28px}
+    .partner-aside{flex-direction:row;flex-wrap:wrap}
+    .partner-stat{flex:1;min-width:140px}
+    .nav ul{display:none}
+    .tl-row{grid-template-columns:90px 1fr;gap:14px}
+    .tl-row .amount{grid-column:2;text-align:left}
+  }
+  @media (max-width: 600px){
+    .proj-grid,.edu-grid,.news-grid,.road-grid,.reps-grid,.foot-grid{grid-template-columns:1fr}
+    .form-row{grid-template-columns:1fr}
+    .nav-btn{font-size:11px;padding:8px 10px}
+    .modal{padding:26px 22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ───────── NAVIGATION ───────── -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="#">
+      <div class="brand-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" stroke="#d8b974" stroke-width="1.6"/><circle cx="12" cy="11" r="3" stroke="#d8b974" stroke-width="1.6"/></svg>
+      </div>
+      <div>УАҚЫП<small>WAQF · QMDB</small></div>
+    </a>
+    <ul>
+      <li><a href="#about">Біз туралы</a></li>
+      <li><a href="#projects">Жобалар</a></li>
+      <li><a href="#roadmap">Жол картасы</a></li>
+      <li><a href="#news">Жаңалықтар</a></li>
+      <li><a href="#donors">Уақыпшылар</a></li>
+      <li><a href="#team">Құрам</a></li>
+      <li><a href="#edu">Білім</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="glass-btn ghost nav-btn" data-open-modal="qabyldau">УАҚЫП ҚАБЫЛДАУ</button>
+      <button class="glass-btn gold nav-btn" data-open-modal="tabystau">УАҚЫПНАМА ТАБЫСТАУ</button>
+    </div>
+  </nav>
+</div>
+
+<!-- ───────── HERO ───────── -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow gold">Қазақстан Мұсылмандары Діни Басқармасы</span>
+      <h1 style="margin-top:14px">Уақып — <span>мәңгілік</span><br/>садақаның тірегі</h1>
+      <p class="lead">УАҚЫП қоры — Қазақстандағы мешіттердің қаржысын мөлдір әрі тиімді басқаратын жалғыз корпоративтік қор. Әр теңге — қауымның игілігіне, үммет мұрасына.</p>
+      <div class="hero-actions">
+        <button class="glass-btn gold">Уақып жасау</button>
+        <button class="glass-btn ghost">Қор қалай жұмыс істейді?</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">3 712</div><div class="lbl">Мешіт қызметте</div></div>
+        <div class="stat"><div class="num">17</div><div class="lbl">Облыстық өкілдік</div></div>
+        <div class="stat"><div class="num">1 248</div><div class="lbl">Тіркелген уақып</div></div>
+        <div class="stat"><div class="num">₸ 4,6 млрд</div><div class="lbl">Жыл бойғы қаражат</div></div>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Live status">
+      <div class="head">
+        <span class="pill"><span class="dot"></span> Тікелей мониторинг</span>
+        <span class="pill" style="margin-left:auto">Q2 · 2026</span>
+      </div>
+      <h3 style="font-size:24px;color:#fff;margin:8px 0 4px">Қор қазынасы</h3>
+      <div style="font-family:'Playfair Display',serif;font-size:46px;color:var(--gold-300);font-weight:700">₸ 4 612 480 000</div>
+      <div style="color:rgba(255,255,255,.6);font-size:13px;margin-bottom:14px">+ ₸ 312 М (+7,3%) өткен тоқсаннан</div>
+      <div class="row"><b>Мешіт құрылысы</b><span class="v">42%</span></div>
+      <div class="row"><b>Білім беру</b><span class="v">21%</span></div>
+      <div class="row"><b>Қайырымдылық</b><span class="v">18%</span></div>
+      <div class="row"><b>Имамдар қоры</b><span class="v">11%</span></div>
+      <div class="row"><b>Резерв</b><span class="v">8%</span></div>
+    </aside>
+  </div>
+</header>
+
+<!-- ───────── ABOUT ───────── -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Біз туралы</span>
+        <h2 style="margin-top:10px">Уақып — өшпейтін садақа, қауымның мәңгілік қазынасы</h2>
+      </div>
+      <p>УАҚЫП қоры Қазақстан Мұсылмандары Діни Басқармасы шеңберінде құрылған және барлық мешіттердің материалдық-қаржылық ресурстарын жинақы, мөлдір басқаруды қамтамасыз етеді.</p>
+    </div>
+
+    <div class="about-grid">
+      <div>
+        <p>Уақып — Аллаһ жолында мәңгілік қалдырылған дүние. Қор қаржының бөлінуін, мешіттердің ұстауын, имамдарды қолдауды, білім беру және әлеуметтік жобаларды үйлестіреді. Біздің мақсатымыз — әр теңге қауымның игілігіне қайтарылып, ұрпақтан-ұрпаққа жалғасатын жүйе құру.</p>
+        <p style="margin-top:14px">Біз шариғи негіздерге сүйеніп, заманауи қаржылық стандарттарды қолданамыз — әр операция аудиттен өтеді, әр уақыпшы өз жарнасының қайда жұмсалғанын онлайн көре алады.</p>
+
+        <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
+          <button class="glass-btn">Жарғымен танысу</button>
+          <button class="glass-btn ghost">Қаржы есебі (PDF)</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <span class="eyebrow" style="color:var(--gold-300)">Біздің құндылықтар</span>
+        <h3 style="margin-top:8px">Шариғат · Мөлдірлік · Тиімділік</h3>
+        <div class="pillars">
+          <div class="pillar"><b>Аманат</b><span>Әр уақыпшының ниеті — қасиетті аманат</span></div>
+          <div class="pillar"><b>Шифа</b><span>Мешіттер мен қауымның ұзақ мерзімді тірегі</span></div>
+          <div class="pillar"><b>Иләһи мақсат</b><span>Аллаһтың разылығы — басты бағдар</span></div>
+          <div class="pillar"><b>Мөлдір есеп</b><span>Әр теңге блокчейн журналында</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── PARTNER: BCC BANK ───────── -->
+<section id="partner" class="partner">
+  <div class="container">
+    <div class="partner-card">
+      <span class="partner-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.9H22l-6 4.4 2.3 7-6.3-4.4L5.7 20.3 8 13.3 2 8.9h7.6L12 2z" fill="#3a2a06"/></svg>
+        Бас стратегиялық серіктес
+      </span>
+
+      <div class="partner-inner">
+        <!-- Co-brand lockup -->
+        <div class="lockup">
+          <div class="logo-chip">
+            <div class="l-mark">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" stroke="#06372a" stroke-width="1.7"/><circle cx="12" cy="11" r="3" stroke="#06372a" stroke-width="1.7"/></svg>
+            </div>
+            <div class="l-name">УАҚЫП</div>
+            <div class="l-sub">Waqf Fund</div>
+          </div>
+
+          <span class="x">×</span>
+
+          <!-- BCC Bank logo -->
+          <div class="logo-chip bcc">
+            <div class="l-mark">
+              <svg width="62" height="22" viewBox="0 0 124 44" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="34" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1">
+                  <tspan fill="#16A05A">B</tspan><tspan fill="#0F8A4C">C</tspan><tspan fill="#0A7A42">C</tspan>
+                </text>
+                <circle cx="116" cy="10" r="6" fill="#C9A14A"/>
+              </svg>
+            </div>
+            <div class="l-name" style="font-size:15px">BCC Bank</div>
+            <div class="l-sub">Bank CenterCredit</div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="partner-text">
+          <span class="eyebrow">Қаржылық серіктестік</span>
+          <h2>BCC Bank — уақыптың сенімді қаржы тірегі</h2>
+          <p>«Банк ЦентрКредит» УАҚЫП қорының бас банкі. Қордың барлық қаражаты BCC Bank-тің арнайы уақып-шоттарында сақталады, әр аударым банк аудиті мен мөлдір есеп жүйесінен өтеді.</p>
+          <div class="partner-feats">
+            <span>Арнайы уақып-депозиттер</span>
+            <span>BCC.kz қосымшасы арқылы садақа</span>
+            <span>Эскроу және банк кепілдігі</span>
+            <span>Халал қаржы стандарты</span>
+            <span>QR төлем инфрақұрылымы</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="partner-aside">
+          <div class="partner-stat">
+            <div class="pv">₸ 4,6 млрд</div>
+            <div class="pl">Уақып-шоттарда</div>
+          </div>
+          <div class="partner-stat">
+            <div class="pv">0%</div>
+            <div class="pl">Қызмет көрсету комиссиясы</div>
+          </div>
+          <button class="glass-btn gold" data-open-modal="qabyldau" style="width:100%">BCC арқылы уақып салу</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── PROJECTS ───────── -->
+<section id="projects" class="projects">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Біздің жобаларымыз</span>
+        <h2 style="margin-top:10px">Қазір жүзеге асып жатқан бастамалар</h2>
+      </div>
+      <p>Мешіттердің инфрақұрылымынан балалардың діни білімі мен жетімдерге қолдауға дейін — қор демеуші болған жобалардың тізімі.</p>
+    </div>
+
+    <div class="proj-grid">
+      <article class="proj-card">
+        <div class="proj-img a">
+          <span class="tag">Құрылыс</span>
+          <svg viewBox="0 0 100 100"><path d="M50 10 L90 50 L50 90 L10 50 Z M50 30 L70 50 L50 70 L30 50 Z" fill="#fff"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>«Нұр Астана» мешітін реставрациялау</h3>
+          <p>Тарихи мешіттің күмбезі мен ішкі әшекейін қалпына келтіру жұмыстары жалғасуда.</p>
+          <div class="progress"><i style="width:72%"></i></div>
+          <div class="proj-meta"><span>72% орындалды</span><span>₸ 280 / 390 млн</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img b">
+          <span class="tag">Білім</span>
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="2"/><path d="M30 50 L70 50 M50 30 L50 70" stroke="#fff" stroke-width="2"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>«Иман-ұя» онлайн медресе</h3>
+          <p>Балалар мен жасөспірімдерге арналған тегін онлайн діни білім платформасы.</p>
+          <div class="progress"><i style="width:48%"></i></div>
+          <div class="proj-meta"><span>48% орындалды</span><span>₸ 120 / 250 млн</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img c">
+          <span class="tag">Әлеумет</span>
+          <svg viewBox="0 0 100 100"><path d="M50 20 L60 40 L80 40 L65 55 L70 75 L50 65 L30 75 L35 55 L20 40 L40 40 Z" fill="#fff"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>Жетімдер мен жесірлерді қолдау</h3>
+          <p>Айлық тағамдық қоржын, медициналық көмек және оқу ақысын жабу бағдарламасы.</p>
+          <div class="progress"><i style="width:91%"></i></div>
+          <div class="proj-meta"><span>91% орындалды</span><span>3 280 отбасы</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img d">
+          <span class="tag">Хадж</span>
+          <svg viewBox="0 0 100 100"><rect x="40" y="40" width="20" height="20" fill="#fff"/><path d="M30 60 L70 60 L80 70 L20 70 Z" fill="#fff"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>«Қажылық — әркімге» бағдарламасы</h3>
+          <p>Аз қамтылған отбасылардан іріктелген қажылар үшін толық демеушілік.</p>
+          <div class="progress"><i style="width:35%"></i></div>
+          <div class="proj-meta"><span>35% орындалды</span><span>140 қажы</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img e">
+          <span class="tag">Имамдар</span>
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="40" r="15" fill="#fff"/><path d="M25 80 Q50 60 75 80 L75 90 L25 90 Z" fill="#fff"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>Имамдарды қолдау қоры</h3>
+          <p>Алыс ауылдардағы имамдарға айлық қосымша және біліктілік курстары.</p>
+          <div class="progress"><i style="width:60%"></i></div>
+          <div class="proj-meta"><span>60% орындалды</span><span>1 120 имам</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-img f">
+          <span class="tag">Цифрландыру</span>
+          <svg viewBox="0 0 100 100"><rect x="20" y="30" width="60" height="40" fill="none" stroke="#fff" stroke-width="2" rx="4"/><circle cx="35" cy="50" r="3" fill="#fff"/><path d="M50 45 L65 45 M50 55 L65 55" stroke="#fff" stroke-width="2"/></svg>
+        </div>
+        <div class="proj-body">
+          <h3>Мешіттер цифрлық экожүйесі</h3>
+          <p>Әр мешіттің кірісі мен шығысын онлайн көрсететін бірыңғай платформа.</p>
+          <div class="progress"><i style="width:22%"></i></div>
+          <div class="proj-meta"><span>22% орындалды</span><span>₸ 80 / 360 млн</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── ROADMAP ───────── -->
+<section id="roadmap" class="roadmap">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Жол картасы</span>
+        <h2 style="margin-top:10px">2026 — 2030: қордың даму бағдары</h2>
+      </div>
+      <p>Біз әр кезеңде нақты, өлшенетін мақсаттар қоямыз — Қазақстанның әр өңіріндегі қауымның мұқтажынан бастап халықаралық уақып стандарттарына дейін.</p>
+    </div>
+
+    <div class="road-grid">
+      <div class="road now">
+        <span class="yr">2026 · Қазір</span>
+        <h4>Іргетас</h4>
+        <ul>
+          <li>17 облыстық өкілдік</li>
+          <li>Бірыңғай аудит жүйесі</li>
+          <li>Цифрлық уақып порталы</li>
+        </ul>
+      </div>
+      <div class="road">
+        <span class="yr">2027</span>
+        <h4>Кеңею</h4>
+        <ul>
+          <li>Аудан деңгейіндегі өкілдер</li>
+          <li>Мобильдік қосымша</li>
+          <li>Шетелдік уақыпшылар</li>
+        </ul>
+      </div>
+      <div class="road">
+        <span class="yr">2028 — 29</span>
+        <h4>Тиімділік</h4>
+        <ul>
+          <li>Уақып инвестициялары</li>
+          <li>Халал индекс қоры</li>
+          <li>Білім гранттары</li>
+        </ul>
+      </div>
+      <div class="road">
+        <span class="yr">2030</span>
+        <h4>Тұрақты болашақ</h4>
+        <ul>
+          <li>₸ 50 млрд капитал</li>
+          <li>Мешіттер 100% өзін-өзі асырау</li>
+          <li>Халықаралық серіктестік</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── NEWS ───────── -->
+<section id="news" class="news">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Жаңалықтар</span>
+        <h2 style="margin-top:10px">Қордың соңғы оқиғалары</h2>
+      </div>
+      <p>Жаңа мешіттер, ашылған бағдарламалар, серіктестіктер және кездесулер — барлық жаңалықтарды бір жерден.</p>
+    </div>
+
+    <div class="news-grid">
+      <article class="news-card feat">
+        <div class="img" style="background:linear-gradient(135deg,#0f6a4f,#06372a)">
+          <span class="date">28 сәуір 2026</span>
+        </div>
+        <div class="body">
+          <span class="eyebrow">Басты жаңалық</span>
+          <h3 style="margin-top:8px">Алматыда «Иман-ұя» онлайн медресенің ресми ашылуы өтті</h3>
+          <p>Бағдарлама 7-17 жас аралығындағы балаларға арналған және 12 пәнді қамтиды. Бірінші жылда 10 000 оқушы тіркелуі күтілуде.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="img" style="background:linear-gradient(135deg,#198463,#0a4d3a)"><span class="date">22 сәуір 2026</span></div>
+        <div class="body">
+          <h3>Шымкенттегі тарихи мешітке қаржы бөлінді</h3>
+          <p>«Қожа Ахмет Ясауи» мешітіне ₸ 180 млн көлемінде уақып аударылды.</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="img" style="background:linear-gradient(135deg,#27a07b,#0f6a4f)"><span class="date">15 сәуір 2026</span></div>
+        <div class="body">
+          <h3>Түркия Diyanet қорымен меморандумға қол қойылды</h3>
+          <p>Имамдар алмасу және білім беру бағдарламалары туралы келісім.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── DONORS / TIMELINE ───────── -->
+<section id="donors" class="donors">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Уақыпшылар</span>
+        <h2 style="margin-top:10px">Кім, қашан және қандай уақып салды</h2>
+      </div>
+      <p>Қордың құрметті уақыпшыларының ашық тізілімі. Әр жазба нотариалды куәландырылып, шариғи кеңеспен бекітіледі.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="yr">2026</div>
+        <div>
+          <div class="who">Серік Мұхтарұлы Әбілдин</div>
+          <div class="what">Қарағандыдағы 1,2 га жер телімін «Иман» медресесі үшін</div>
+        </div>
+        <div class="amount">₸ 420 млн</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="yr">2025</div>
+        <div>
+          <div class="who">«Алматы Девелопмент» ЖШС</div>
+          <div class="what">3 қабатты әкімшілік ғимарат — мешіт қажетіне</div>
+        </div>
+        <div class="amount">₸ 1,8 млрд</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="yr">2025</div>
+        <div>
+          <div class="who">Айгүл Сапарқызы Ержанова</div>
+          <div class="what">Жетімдер мен жесірлер бағдарламасына арналған капитал</div>
+        </div>
+        <div class="amount">₸ 96 млн</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="yr">2024</div>
+        <div>
+          <div class="who">«Halyk Foundation» қайырымдылық қоры</div>
+          <div class="what">Имамдарды қолдау бағдарламасы үшін эндаумент</div>
+        </div>
+        <div class="amount">₸ 600 млн</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="yr">2024</div>
+        <div>
+          <div class="who">Бауыржан Қанатұлы Сейтжан</div>
+          <div class="what">Шымкенттегі дүкен ғимараты — кіріс мешіт ұстауына</div>
+        </div>
+        <div class="amount">₸ 240 млн</div>
+      </div>
+
+      <div class="tl-row">
+        <div class="yr">2023</div>
+        <div>
+          <div class="who">Аноним уақыпшы (отбасы атынан)</div>
+          <div class="what">Қор іргетасына салынған бастапқы жарна</div>
+        </div>
+        <div class="amount">₸ 2,4 млрд</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:28px"><button class="glass-btn ghost">Барлық уақыпшылар тізілімі</button></div>
+  </div>
+</section>
+
+<!-- ───────── TEAM ───────── -->
+<section id="team" class="team">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Қор құрамы</span>
+        <h2 style="margin-top:10px">Басшылық және өңірлік өкілдер</h2>
+      </div>
+      <p>Қор қызметін Бас директор және 17 облыстық өкілден тұратын кеңес жүзеге асырады. Әр өкіл өз өңіріндегі мешіттер мен уақыпшылардың арасындағы көпір.</p>
+    </div>
+
+    <div class="lead-card">
+      <div class="avatar">ҚМ</div>
+      <div>
+        <div class="role">Бас директор · CEO</div>
+        <h3>Қайрат Мейрамұлы Ақатаев</h3>
+        <div class="title-pos">Қор төрағасы · ҚМДБ кеңес мүшесі · Ph.D., исламдық қаржы</div>
+        <p>15 жыл мешіттер мен қайырымдылық ұйымдарында басқарушы тәжірибесі. Малайзия INCEIF университетінің түлегі. Қордың стратегиялық бағытын, халықаралық серіктестікті және цифрлық трансформациясын басқарады.</p>
+      </div>
+    </div>
+
+    <div class="reps-grid">
+      <div class="rep"><div class="av">АО</div><div class="city">Астана</div><div class="nm">Әлихан Орманұлы</div><div class="ps">Қалалық өкіл</div></div>
+      <div class="rep"><div class="av">НТ</div><div class="city">Алматы</div><div class="nm">Нұрбек Талғатұлы</div><div class="ps">Қалалық өкіл</div></div>
+      <div class="rep"><div class="av">МС</div><div class="city">Шымкент</div><div class="nm">Мұратбек Сапарұлы</div><div class="ps">Қалалық өкіл</div></div>
+      <div class="rep"><div class="av">ДБ</div><div class="city">Қарағанды</div><div class="nm">Дәурен Бекжанұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">ЕТ</div><div class="city">Ақтөбе</div><div class="nm">Ержан Тұрсынұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">АК</div><div class="city">Атырау</div><div class="nm">Айбек Қуатұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">СЖ</div><div class="city">Тараз</div><div class="nm">Сәкен Жанұзақұлы</div><div class="ps">Жамбыл облысы</div></div>
+      <div class="rep"><div class="av">ҒМ</div><div class="city">Қызылорда</div><div class="nm">Ғабит Мансұрұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">БТ</div><div class="city">Орал</div><div class="nm">Бауыржан Темірлан</div><div class="ps">БҚО өкілі</div></div>
+      <div class="rep"><div class="av">ТА</div><div class="city">Өскемен</div><div class="nm">Темірхан Айдынұлы</div><div class="ps">ШҚО өкілі</div></div>
+      <div class="rep"><div class="av">ЖР</div><div class="city">Көкшетау</div><div class="nm">Жасұлан Рахатұлы</div><div class="ps">Ақмола облысы</div></div>
+      <div class="rep"><div class="av">ҚА</div><div class="city">Талдықорған</div><div class="nm">Қанат Асылбекұлы</div><div class="ps">Жетісу облысы</div></div>
+      <div class="rep"><div class="av">МД</div><div class="city">Түркістан</div><div class="nm">Мадияр Дәулетұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">РҚ</div><div class="city">Петропавл</div><div class="nm">Ринат Қайратұлы</div><div class="ps">СҚО өкілі</div></div>
+      <div class="rep"><div class="av">АН</div><div class="city">Павлодар</div><div class="nm">Асхат Нұрланұлы</div><div class="ps">Облыстық өкіл</div></div>
+      <div class="rep"><div class="av">ОБ</div><div class="city">Қостанай</div><div class="nm">Олжас Бахытжанұлы</div><div class="ps">Облыстық өкіл</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── EDUCATION ───────── -->
+<section id="edu" class="edu">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Білім бөлімі</span>
+        <h2 style="margin-top:10px">Уақып туралы — қарапайымнан күрделіге</h2>
+      </div>
+      <p>Уақыптың тарихы, түрлері, заманауи нысандары және ғылыми негіздерін көрсететін материалдар.</p>
+    </div>
+
+    <div class="edu-tabs">
+      <div class="edu-tab active">Негіздер</div>
+      <div class="edu-tab">Тарих</div>
+      <div class="edu-tab">Түрлері</div>
+      <div class="edu-tab">21 ғасыр</div>
+      <div class="edu-tab">Шариғат</div>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19.5V6c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v13.5l-4-2-4 2-4-2-4 2z" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Уақып деген не?</h3>
+        <p>Уақып — Аллаһ жолында мәңгілік иеліктен шығарылған, кірісі қауым игілігіне жұмсалатын мүлік немесе қаражат.</p>
+        <ul>
+          <li>«Уақафа» — тоқтату, бекіту</li>
+          <li>Меншік иесі — Аллаһ</li>
+          <li>Пайдаланушы — қауым</li>
+        </ul>
+      </div>
+
+      <div class="edu-card gold">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Алғашқы уақып</h3>
+        <p>Тарихтағы алғашқы уақып — Пайғамбарымыз ﷺ заманында Омар ибн Хаттаб разиаллаһу анхудың Хайбардағы жер уақыпы.</p>
+        <ul>
+          <li>624 ж. — алғашқы тіркеу</li>
+          <li>Жер мәңгілік қалдырылды</li>
+          <li>Кірісі — кедейлерге</li>
+        </ul>
+      </div>
+
+      <div class="edu-card">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Ірі тарихи уақыптар</h3>
+        <p>Ислам тарихындағы ұлы уақыптар — қалалардың тірегіне айналған мәңгілік қазыналар.</p>
+        <ul>
+          <li>Әл-Әзһар (Каир, 970 ж.)</li>
+          <li>Сүлеймания вакфы (Ыстамбұл)</li>
+          <li>Қожа Ахмет Ясауи кешені</li>
+          <li>Бұхара медреселерінің уақпы</li>
+        </ul>
+      </div>
+
+      <div class="edu-card">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 8h18M3 12h18M3 16h18M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Уақып түрлері</h3>
+        <p>Шариғат уақыпты түрлі санаттарға бөледі — мақсатына, мүлкіне және бенефициарына қарай.</p>
+        <ul>
+          <li><b>Хайри</b> — қайырымдылыққа</li>
+          <li><b>Әһли (зурри)</b> — отбасы үшін</li>
+          <li><b>Мүштарак</b> — аралас түрі</li>
+          <li><b>Нақди</b> — ақшалай уақып</li>
+        </ul>
+      </div>
+
+      <div class="edu-card gold">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>21 ғасырдағы уақыптар</h3>
+        <p>Заманауи қаржылық құралдар уақыптың формасын кеңейтті — енді цифрлық та мүмкін.</p>
+        <ul>
+          <li>Cash Waqf (ақшалай қор)</li>
+          <li>Уақып сукуктары</li>
+          <li>Криптоуақып (NFT, токен)</li>
+          <li>Корпоративтік уақып</li>
+          <li>Уақып стартаптары</li>
+        </ul>
+      </div>
+
+      <div class="edu-card">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Шариғи шарттары</h3>
+        <p>Уақып заңды болуы үшін бірнеше міндетті шартқа сай келуі керек.</p>
+        <ul>
+          <li>Ниет (нийя) — Аллаһ үшін</li>
+          <li>Меншік иесі болу</li>
+          <li>Мүлік халал болу</li>
+          <li>Мақсат — игілікті</li>
+          <li>Мәңгілік (тәуәкід)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── CTA ───────── -->
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <span class="eyebrow gold">Аманат · Шифа · Мәңгілік</span>
+      <h2 style="margin-top:10px">Бүгін салған уақыпың — ұрпақтарыңа жалғасатын садақа</h2>
+      <p>Сіз қалдырған әр теңге мешіт құрылысына, балалардың білім алуына, жетімдердің қамқорлығына кетеді. Бұл — Аллаһтың алдына өзіңізбен бірге жететін амал.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="glass-btn gold" style="font-size:15px;padding:14px 26px">Уақыпшы болу</button>
+      <button class="glass-btn ghost" style="font-size:15px;padding:14px 26px">Кеңес алу</button>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#" style="color:#fff;border:none">
+          <div class="brand-mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" stroke="#d8b974" stroke-width="1.6"/><circle cx="12" cy="11" r="3" stroke="#d8b974" stroke-width="1.6"/></svg></div>
+          <div>УАҚЫП<small style="color:rgba(255,255,255,.4)">WAQF · QMDB</small></div>
+        </a>
+        <p style="margin-top:18px;font-size:14px;max-width:340px">Қазақстан Мұсылмандары Діни Басқармасының корпоративтік уақып қоры. Мешіттер қаржысының мөлдір орталығы.</p>
+      </div>
+      <div>
+        <h4>Қор</h4>
+        <ul>
+          <li><a href="#about">Біз туралы</a></li>
+          <li><a href="#team">Құрам</a></li>
+          <li><a href="#roadmap">Жол картасы</a></li>
+          <li><a>Қаржы есептері</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Білім</h4>
+        <ul>
+          <li><a href="#edu">Уақып негіздері</a></li>
+          <li><a>Шариғи кеңес</a></li>
+          <li><a>Зерттеулер</a></li>
+          <li><a>FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Байланыс</h4>
+        <ul>
+          <li>Астана, Тұран даңғ. 25</li>
+          <li>+7 (7172) 000-000</li>
+          <li>info@waqf.kz</li>
+          <li>muftyat.kz</li>
+        </ul>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap">
+      <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45)">Бас қаржы серіктесі</span>
+      <div style="display:inline-flex;align-items:center;gap:10px;background:#fff;padding:10px 18px;border-radius:14px;box-shadow:0 8px 20px rgba(0,0,0,.25)">
+        <svg width="74" height="26" viewBox="0 0 124 44" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="34" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="-1">
+            <tspan fill="#16A05A">B</tspan><tspan fill="#0F8A4C">C</tspan><tspan fill="#0A7A42">C</tspan>
+          </text>
+          <circle cx="116" cy="10" r="6" fill="#C9A14A"/>
+        </svg>
+        <span style="font-size:11px;color:#314940;font-weight:600;border-left:1px solid #e2e6e2;padding-left:10px">Bank<br/>CenterCredit</span>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <div>© 2026 УАҚЫП Қоры · ҚМДБ. Барлық құқықтар қорғалған.</div>
+      <div>Шариғи кеңес · Аудит · Жария оферта</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ───────── DONATION MODAL ───────── -->
+<div class="modal-overlay" id="waqfModal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Жабу">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="modal-form" id="modalForm">
+      <span class="eyebrow" id="modalEyebrow">Уақыпшы болу</span>
+      <h3 id="modalTitle">УАҚЫП ҚАБЫЛДАУ</h3>
+      <p class="sub" id="modalSub">Деректеріңізді қалдырыңыз — қордың өкілі сізбен 1 жұмыс күні ішінде хабарласып, барлық сұрағыңызға жауап береді.</p>
+
+      <form onsubmit="return submitWaqf(event)">
+        <div class="form-row">
+          <div class="field">
+            <label>Аты-жөні <span class="req">*</span></label>
+            <input type="text" required placeholder="Толық аты-жөніңіз" />
+          </div>
+          <div class="field">
+            <label>Телефон <span class="req">*</span></label>
+            <input type="tel" required placeholder="+7 (___) ___-__-__" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="example@mail.kz" />
+          </div>
+          <div class="field">
+            <label>Қала / облыс</label>
+            <select>
+              <option value="">Таңдаңыз</option>
+              <option>Астана</option><option>Алматы</option><option>Шымкент</option>
+              <option>Қарағанды</option><option>Ақтөбе</option><option>Атырау</option>
+              <option>Тараз (Жамбыл)</option><option>Қызылорда</option><option>Орал (БҚО)</option>
+              <option>Өскемен (ШҚО)</option><option>Көкшетау (Ақмола)</option>
+              <option>Талдықорған (Жетісу)</option><option>Түркістан</option>
+              <option>Петропавл (СҚО)</option><option>Павлодар</option><option>Қостанай</option>
+              <option>Басқа / шетел</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label>Уақып түрі</label>
+            <select>
+              <option value="">Таңдаңыз</option>
+              <option>Ақшалай уақып (нақди)</option>
+              <option>Жылжымайтын мүлік (жер, ғимарат)</option>
+              <option>Көлік / техника</option>
+              <option>Бағалы қағаздар / үлес</option>
+              <option>Уақыпнама бойынша мұра</option>
+              <option>Әзірге белгісіз — кеңес керек</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Болжамды құны / көлемі</label>
+            <input type="text" placeholder="Мысалы: ₸ 5 000 000" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Қосымша ақпарат / ниетіңіз</label>
+          <textarea placeholder="Уақыпты қай мақсатқа бағыттағыңыз келеді, сұрақтарыңыз болса жазыңыз..."></textarea>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" required />
+          <span>Жеке деректерімді өңдеуге және қор өкілінің менімен байланысуына келісім беремін.</span>
+        </label>
+
+        <button type="submit" class="glass-btn gold" id="modalSubmit">Өтінімді жіберу</button>
+      </form>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <div class="check">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Өтінім қабылданды!</h3>
+      <p>Жазайыңыз қордың тізіліміне енгізілді. Өкіліміз жақын арада сізбен хабарласады.<br/>Аллаһ ниетіңізді қабыл етсін!</p>
+      <button class="glass-btn ghost" id="successClose" style="margin-top:20px">Жабу</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ───── Donation modal ─────
+  const modal=document.getElementById('waqfModal');
+  const modalForm=document.getElementById('modalForm');
+  const modalSuccess=document.getElementById('modalSuccess');
+  const modalTitle=document.getElementById('modalTitle');
+  const modalEyebrow=document.getElementById('modalEyebrow');
+  const modalSub=document.getElementById('modalSub');
+  const modalSubmit=document.getElementById('modalSubmit');
+
+  const modalContent={
+    qabyldau:{
+      eyebrow:'Уақыпшы болу',
+      title:'УАҚЫП ҚАБЫЛДАУ',
+      sub:'Деректеріңізді қалдырыңыз — қордың өкілі 1 жұмыс күні ішінде хабарласып, уақып рәсімдеуге көмектеседі.',
+      btn:'Өтінімді жіберу'
+    },
+    tabystau:{
+      eyebrow:'Уақыпнама рәсімдеу',
+      title:'УАҚЫПНАМА ТАБЫСТАУ',
+      sub:'Уақыпнама — мүлкіңізді мәңгілік уақыпқа айналдыратын құжат. Деректеріңізді қалдырыңыз, шариғи кеңес пен заңгер дайындауға көмектеседі.',
+      btn:'Уақыпнама өтінімін жіберу'
+    }
+  };
+
+  function openModal(type){
+    const c=modalContent[type]||modalContent.qabyldau;
+    modalEyebrow.textContent=c.eyebrow;
+    modalTitle.textContent=c.title;
+    modalSub.textContent=c.sub;
+    modalSubmit.textContent=c.btn;
+    modalForm.style.display='block';
+    modalSuccess.style.display='none';
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function submitWaqf(e){
+    e.preventDefault();
+    modalForm.style.display='none';
+    modalSuccess.style.display='block';
+    return false;
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach(b=>{
+    b.addEventListener('click',()=>openModal(b.getAttribute('data-open-modal')));
+  });
+  document.getElementById('modalClose').addEventListener('click',closeModal);
+  document.getElementById('successClose').addEventListener('click',closeModal);
+  modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+  // Hero + CTA buttons also open the modal
+  document.querySelectorAll('.hero-actions .glass-btn.gold, .cta .glass-btn.gold')
+    .forEach(b=>b.addEventListener('click',()=>openModal('qabyldau')));
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+    })
+  });
+  // Edu tab toggling
+  const tabs=document.querySelectorAll('.edu-tab');
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+  }));
+  // Subtle nav shadow on scroll
+  const nav=document.querySelector('.nav');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>30){nav.style.background='rgba(255,255,255,.78)';nav.style.boxShadow='0 14px 36px rgba(6,55,42,.14), inset 0 1px 0 rgba(255,255,255,.7)'}
+    else{nav.style.background='rgba(255,255,255,.55)';nav.style.boxShadow='0 10px 30px rgba(6,55,42,.10), inset 0 1px 0 rgba(255,255,255,.7)'}
+  });
+</script>
+</body>
+</html>
