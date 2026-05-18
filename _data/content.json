@@ -1,0 +1,25 @@
+{
+  "contact": {
+    "address": "Астана, Тұран даңғ. 25",
+    "phone": "+7 (7172) 000-000",
+    "email": "info@waqf.kz"
+  },
+  "stats": {
+    "mosques": "3 712",
+    "regions": "17",
+    "waqfs": "1 248",
+    "funds": "₸ 4,6 млрд"
+  },
+  "treasury": {
+    "total": "₸ 4 612 480 000",
+    "growth": "+ ₸ 312 М (+7,3%) өткен тоқсаннан",
+    "construction": "42%",
+    "education": "21%",
+    "charity": "18%",
+    "imams": "11%",
+    "reserve": "8%"
+  },
+  "partner": {
+    "accounts": "₸ 4,6 млрд"
+  }
+}

@@ -1,0 +1,63 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+locale: 'kk'
+
+collections:
+  - name: "settings"
+    label: "Сайт баптаулары"
+    files:
+      - name: "general"
+        label: "Жалпы мәліметтер"
+        file: "_data/content.json"
+        format: json
+        fields:
+          - label: "Байланыс"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Мекенжай", name: "address", widget: "string" }
+              - { label: "Телефон", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+
+          - label: "Қор статистикасы"
+            name: "stats"
+            widget: "object"
+            fields:
+              - { label: "Мешіт саны", name: "mosques", widget: "string" }
+              - { label: "Облыстық өкілдік", name: "regions", widget: "string" }
+              - { label: "Тіркелген уақып", name: "waqfs", widget: "string" }
+              - { label: "Жыл бойғы қаражат", name: "funds", widget: "string" }
+
+          - label: "Қор қазынасы"
+            name: "treasury"
+            widget: "object"
+            fields:
+              - { label: "Жалпы сома (мысалы: ₸ 4 612 480 000)", name: "total", widget: "string" }
+              - { label: "Өсім (мысалы: + ₸ 312 М (+7,3%) өткен тоқсаннан)", name: "growth", widget: "string" }
+              - { label: "Мешіт құрылысы %", name: "construction", widget: "string" }
+              - { label: "Білім беру %", name: "education", widget: "string" }
+              - { label: "Қайырымдылық %", name: "charity", widget: "string" }
+              - { label: "Имамдар қоры %", name: "imams", widget: "string" }
+              - { label: "Резерв %", name: "reserve", widget: "string" }
+
+          - label: "Серіктес статистика"
+            name: "partner"
+            widget: "object"
+            fields:
+              - { label: "Уақып-шоттарда (млрд)", name: "accounts", widget: "string" }
+
+  - name: "media"
+    label: "Суреттер"
+    files:
+      - name: "logos"
+        label: "Логотиптер"
+        file: "_data/media.json"
+        format: json
+        fields:
+          - { label: "УАҚЫП логотипі", name: "waqf_logo", widget: "image" }
+          - { label: "BCC Bank логотипі", name: "bcc_logo", widget: "image" }

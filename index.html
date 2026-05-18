@@ -459,10 +459,10 @@
         <button class="glass-btn ghost">Қор қалай жұмыс істейді?</button>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="num">3 712</div><div class="lbl">Мешіт қызметте</div></div>
-        <div class="stat"><div class="num">17</div><div class="lbl">Облыстық өкілдік</div></div>
-        <div class="stat"><div class="num">1 248</div><div class="lbl">Тіркелген уақып</div></div>
-        <div class="stat"><div class="num">₸ 4,6 млрд</div><div class="lbl">Жыл бойғы қаражат</div></div>
+        <div class="stat"><div class="num" data-cms="stats.mosques">3 712</div><div class="lbl">Мешіт қызметте</div></div>
+        <div class="stat"><div class="num" data-cms="stats.regions">17</div><div class="lbl">Облыстық өкілдік</div></div>
+        <div class="stat"><div class="num" data-cms="stats.waqfs">1 248</div><div class="lbl">Тіркелген уақып</div></div>
+        <div class="stat"><div class="num" data-cms="stats.funds">₸ 4,6 млрд</div><div class="lbl">Жыл бойғы қаражат</div></div>
       </div>
     </div>
 
@@ -472,13 +472,13 @@
         <span class="pill" style="margin-left:auto">Q2 · 2026</span>
       </div>
       <h3 style="font-size:24px;color:#fff;margin:8px 0 4px">Қор қазынасы</h3>
-      <div style="font-family:'Playfair Display',serif;font-size:46px;color:var(--gold-300);font-weight:700">₸ 4 612 480 000</div>
-      <div style="color:rgba(255,255,255,.6);font-size:13px;margin-bottom:14px">+ ₸ 312 М (+7,3%) өткен тоқсаннан</div>
-      <div class="row"><b>Мешіт құрылысы</b><span class="v">42%</span></div>
-      <div class="row"><b>Білім беру</b><span class="v">21%</span></div>
-      <div class="row"><b>Қайырымдылық</b><span class="v">18%</span></div>
-      <div class="row"><b>Имамдар қоры</b><span class="v">11%</span></div>
-      <div class="row"><b>Резерв</b><span class="v">8%</span></div>
+      <div style="font-family:'Playfair Display',serif;font-size:46px;color:var(--gold-300);font-weight:700" data-cms="treasury.total">₸ 4 612 480 000</div>
+      <div style="color:rgba(255,255,255,.6);font-size:13px;margin-bottom:14px" data-cms="treasury.growth">+ ₸ 312 М (+7,3%) өткен тоқсаннан</div>
+      <div class="row"><b>Мешіт құрылысы</b><span class="v" data-cms="treasury.construction">42%</span></div>
+      <div class="row"><b>Білім беру</b><span class="v" data-cms="treasury.education">21%</span></div>
+      <div class="row"><b>Қайырымдылық</b><span class="v" data-cms="treasury.charity">18%</span></div>
+      <div class="row"><b>Имамдар қоры</b><span class="v" data-cms="treasury.imams">11%</span></div>
+      <div class="row"><b>Резерв</b><span class="v" data-cms="treasury.reserve">8%</span></div>
     </aside>
   </div>
 </header>
@@ -1034,9 +1034,9 @@
       <div>
         <h4>Байланыс</h4>
         <ul>
-          <li>Астана, Тұран даңғ. 25</li>
-          <li>+7 (7172) 000-000</li>
-          <li>info@waqf.kz</li>
+          <li data-cms="contact.address">Астана, Тұран даңғ. 25</li>
+          <li data-cms="contact.phone">+7 (7172) 000-000</li>
+          <li data-cms="contact.email">info@waqf.kz</li>
           <li><a href="https://muftyat.kz" target="_blank">muftyat.kz</a></li>
         </ul>
       </div>
@@ -1221,6 +1221,31 @@
     if(window.scrollY>30){nav.style.background='rgba(255,255,255,.78)';nav.style.boxShadow='0 14px 36px rgba(6,55,42,.14), inset 0 1px 0 rgba(255,255,255,.7)'}
     else{nav.style.background='rgba(255,255,255,.55)';nav.style.boxShadow='0 10px 30px rgba(6,55,42,.10), inset 0 1px 0 rgba(255,255,255,.7)'}
   });
+</script>
+
+<!-- Netlify Identity -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+
+  // Подгружаем данные из _data/content.json и подставляем в элементы
+  fetch('/_data/content.json')
+    .then(r => r.json())
+    .then(data => {
+      document.querySelectorAll('[data-cms]').forEach(el => {
+        const keys = el.getAttribute('data-cms').split('.');
+        let val = data;
+        keys.forEach(k => { if (val) val = val[k]; });
+        if (val !== undefined) el.textContent = val;
+      });
+    })
+    .catch(() => {}); // Локально не работает, только на Netlify
 </script>
 </body>
 </html>
