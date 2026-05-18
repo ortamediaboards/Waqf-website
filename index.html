@@ -591,84 +591,8 @@
       <p>Мешіттердің инфрақұрылымынан балалардың діни білімі мен жетімдерге қолдауға дейін — қор демеуші болған жобалардың тізімі.</p>
     </div>
 
-    <div class="proj-grid">
-      <article class="proj-card">
-        <div class="proj-img a">
-          <span class="tag">Құрылыс</span>
-          <svg viewBox="0 0 100 100"><path d="M50 10 L90 50 L50 90 L10 50 Z M50 30 L70 50 L50 70 L30 50 Z" fill="#fff"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>«Нұр Астана» мешітін реставрациялау</h3>
-          <p>Тарихи мешіттің күмбезі мен ішкі әшекейін қалпына келтіру жұмыстары жалғасуда.</p>
-          <div class="progress"><i style="width:72%"></i></div>
-          <div class="proj-meta"><span>72% орындалды</span><span>₸ 280 / 390 млн</span></div>
-        </div>
-      </article>
-
-      <article class="proj-card">
-        <div class="proj-img b">
-          <span class="tag">Білім</span>
-          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="#fff" stroke-width="2"/><path d="M30 50 L70 50 M50 30 L50 70" stroke="#fff" stroke-width="2"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>«Иман-ұя» онлайн медресе</h3>
-          <p>Балалар мен жасөспірімдерге арналған тегін онлайн діни білім платформасы.</p>
-          <div class="progress"><i style="width:48%"></i></div>
-          <div class="proj-meta"><span>48% орындалды</span><span>₸ 120 / 250 млн</span></div>
-        </div>
-      </article>
-
-      <article class="proj-card">
-        <div class="proj-img c">
-          <span class="tag">Әлеумет</span>
-          <svg viewBox="0 0 100 100"><path d="M50 20 L60 40 L80 40 L65 55 L70 75 L50 65 L30 75 L35 55 L20 40 L40 40 Z" fill="#fff"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>Жетімдер мен жесірлерді қолдау</h3>
-          <p>Айлық тағамдық қоржын, медициналық көмек және оқу ақысын жабу бағдарламасы.</p>
-          <div class="progress"><i style="width:91%"></i></div>
-          <div class="proj-meta"><span>91% орындалды</span><span>3 280 отбасы</span></div>
-        </div>
-      </article>
-
-      <article class="proj-card">
-        <div class="proj-img d">
-          <span class="tag">Хадж</span>
-          <svg viewBox="0 0 100 100"><rect x="40" y="40" width="20" height="20" fill="#fff"/><path d="M30 60 L70 60 L80 70 L20 70 Z" fill="#fff"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>«Қажылық — әркімге» бағдарламасы</h3>
-          <p>Аз қамтылған отбасылардан іріктелген қажылар үшін толық демеушілік.</p>
-          <div class="progress"><i style="width:35%"></i></div>
-          <div class="proj-meta"><span>35% орындалды</span><span>140 қажы</span></div>
-        </div>
-      </article>
-
-      <article class="proj-card">
-        <div class="proj-img e">
-          <span class="tag">Имамдар</span>
-          <svg viewBox="0 0 100 100"><circle cx="50" cy="40" r="15" fill="#fff"/><path d="M25 80 Q50 60 75 80 L75 90 L25 90 Z" fill="#fff"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>Имамдарды қолдау қоры</h3>
-          <p>Алыс ауылдардағы имамдарға айлық қосымша және біліктілік курстары.</p>
-          <div class="progress"><i style="width:60%"></i></div>
-          <div class="proj-meta"><span>60% орындалды</span><span>1 120 имам</span></div>
-        </div>
-      </article>
-
-      <article class="proj-card">
-        <div class="proj-img f">
-          <span class="tag">Цифрландыру</span>
-          <svg viewBox="0 0 100 100"><rect x="20" y="30" width="60" height="40" fill="none" stroke="#fff" stroke-width="2" rx="4"/><circle cx="35" cy="50" r="3" fill="#fff"/><path d="M50 45 L65 45 M50 55 L65 55" stroke="#fff" stroke-width="2"/></svg>
-        </div>
-        <div class="proj-body">
-          <h3>Мешіттер цифрлық экожүйесі</h3>
-          <p>Әр мешіттің кірісі мен шығысын онлайн көрсететін бірыңғай платформа.</p>
-          <div class="progress"><i style="width:22%"></i></div>
-          <div class="proj-meta"><span>22% орындалды</span><span>₸ 80 / 360 млн</span></div>
-        </div>
-      </article>
+    <div class="proj-grid" id="projGrid">
+      <!-- динамически загружается из _data/projects.json -->
     </div>
   </div>
 </section>
@@ -736,33 +660,11 @@
       <p>Жаңа мешіттер, ашылған бағдарламалар, серіктестіктер және кездесулер — барлық жаңалықтарды бір жерден.</p>
     </div>
 
-    <div class="news-grid">
-      <article class="news-card feat">
-        <div class="img" style="background:linear-gradient(135deg,#0f6a4f,#06372a)">
-          <span class="date">28 сәуір 2026</span>
-        </div>
-        <div class="body">
-          <span class="eyebrow">Басты жаңалық</span>
-          <h3 style="margin-top:8px">Алматыда «Иман-ұя» онлайн медресенің ресми ашылуы өтті</h3>
-          <p>Бағдарлама 7-17 жас аралығындағы балаларға арналған және 12 пәнді қамтиды. Бірінші жылда 10 000 оқушы тіркелуі күтілуде.</p>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="img" style="background:linear-gradient(135deg,#198463,#0a4d3a)"><span class="date">22 сәуір 2026</span></div>
-        <div class="body">
-          <h3>Шымкенттегі тарихи мешітке қаржы бөлінді</h3>
-          <p>«Қожа Ахмет Ясауи» мешітіне ₸ 180 млн көлемінде уақып аударылды.</p>
-        </div>
-      </article>
-
-      <article class="news-card">
-        <div class="img" style="background:linear-gradient(135deg,#27a07b,#0f6a4f)"><span class="date">15 сәуір 2026</span></div>
-        <div class="body">
-          <h3>Түркия Diyanet қорымен меморандумға қол қойылды</h3>
-          <p>Имамдар алмасу және білім беру бағдарламалары туралы келісім.</p>
-        </div>
-      </article>
+    <div class="news-grid" id="newsGrid">
+      <!-- динамически загружается из _data/news.json -->
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="news.html" class="glass-btn gold" style="display:inline-block;padding:14px 32px;font-size:15px">Барлық жаңалықтарды оқу</a>
     </div>
   </div>
 </section>
@@ -1234,8 +1136,17 @@
     });
   }
 
-  // Подгружаем данные из _data/content.json и подставляем в элементы
-  fetch('/_data/content.json')
+  const tagColors = {
+    'Құрылыс':'linear-gradient(135deg,#0f6a4f,#06372a)',
+    'Білім':'linear-gradient(135deg,#198463,#0a4d3a)',
+    'Әлеумет':'linear-gradient(135deg,#27a07b,#0f6a4f)',
+    'Хадж':'linear-gradient(135deg,#c9a14a,#a07830)',
+    'Имамдар':'linear-gradient(135deg,#314940,#0c1c17)',
+    'Цифрландыру':'linear-gradient(135deg,#0a4d3a,#06372a)'
+  };
+
+  // Загружаем content.json и подставляем data-cms элементы
+  fetch('_data/content.json')
     .then(r => r.json())
     .then(data => {
       document.querySelectorAll('[data-cms]').forEach(el => {
@@ -1245,7 +1156,49 @@
         if (val !== undefined) el.textContent = val;
       });
     })
-    .catch(() => {}); // Локально не работает, только на Netlify
+    .catch(() => {});
+
+  // Загружаем и рендерим проекты
+  fetch('_data/projects.json')
+    .then(r => r.json())
+    .then(projects => {
+      const grid = document.getElementById('projGrid');
+      if (!grid) return;
+      grid.innerHTML = projects.map(p => {
+        const bg = p.image ? `url('${p.image}') center/cover` : (tagColors[p.tag] || 'linear-gradient(135deg,#0f6a4f,#06372a)');
+        return `<article class="proj-card">
+          <div class="proj-img" style="background:${bg}">
+            <span class="tag">${p.tag}</span>
+          </div>
+          <div class="proj-body">
+            <h3>${p.title}</h3>
+            <p>${p.description}</p>
+            <div class="progress"><i style="width:${p.progress}%"></i></div>
+            <div class="proj-meta"><span>${p.meta_left}</span><span>${p.meta_right}</span></div>
+          </div>
+        </article>`;
+      }).join('');
+    })
+    .catch(() => {});
+
+  // Загружаем и рендерим новости (только первые 3)
+  fetch('_data/news.json')
+    .then(r => r.json())
+    .then(news => {
+      const grid = document.getElementById('newsGrid');
+      if (!grid) return;
+      const bgColors = ['linear-gradient(135deg,#0f6a4f,#06372a)','linear-gradient(135deg,#198463,#0a4d3a)','linear-gradient(135deg,#27a07b,#0f6a4f)'];
+      grid.innerHTML = news.slice(0, 3).map((n, i) => {
+        const bg = n.image ? `url('${n.image}') center/cover` : bgColors[i % bgColors.length];
+        const feat = n.featured ? ' feat' : '';
+        const cat = n.category ? `<span class="eyebrow">${n.category}</span>` : '';
+        return `<article class="news-card${feat}">
+          <div class="img" style="background:${bg}"><span class="date">${n.date}</span></div>
+          <div class="body">${cat}<h3 style="margin-top:${n.category?'8px':'0'}">${n.title}</h3><p>${n.description}</p></div>
+        </article>`;
+      }).join('');
+    })
+    .catch(() => {});
 </script>
 </body>
 </html>

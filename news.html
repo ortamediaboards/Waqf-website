@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Жаңалықтар — УАҚЫП Қоры</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'NMU';src:url('fonts/NMU_Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+  @font-face{font-family:'QazaqBaspa';src:url('fonts/Qazaq_Baspa_Muftyat.ttf') format('truetype');font-weight:400;font-display:swap}
+  :root{
+    --green-900:#06372a;--green-800:#0a4d3a;--green-700:#0f6a4f;
+    --gold-500:#c9a14a;--gold-300:#e7d39a;--cream:#f7f3ea;
+    --ink-900:#0c1c17;--ink-500:#6c7e76;--line:rgba(12,28,23,.08);
+    --shadow-sm:0 4px 14px rgba(6,55,42,.08);--shadow-md:0 14px 40px rgba(6,55,42,.14);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:'QazaqBaspa','Inter',sans-serif;color:var(--ink-900);background:var(--cream);-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'NMU','Playfair Display',serif;font-weight:700;margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1240px;margin:0 auto;padding:0 28px}
+
+  /* Nav */
+  .nav-wrap{position:fixed;top:14px;left:0;right:0;z-index:100;display:flex;justify-content:center;padding:0 16px}
+  .nav{display:flex;align-items:center;gap:8px;padding:8px 8px 8px 18px;background:rgba(255,255,255,.55);backdrop-filter:saturate(160%) blur(22px);-webkit-backdrop-filter:saturate(160%) blur(22px);border:1px solid rgba(255,255,255,.6);box-shadow:0 10px 30px rgba(6,55,42,.10);border-radius:999px;width:100%;max-width:1200px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--green-900);padding-right:8px;border-right:1px solid var(--line);font-family:'NMU','Inter',sans-serif}
+  .brand-mark{width:40px;height:40px;border-radius:8px;overflow:hidden;display:grid;place-items:center}
+  .brand small{display:block;font-size:10px;font-weight:500;color:var(--ink-500);letter-spacing:.18em;text-transform:uppercase;font-family:'QazaqBaspa','Inter',sans-serif}
+  .back-btn{margin-left:auto;padding:9px 18px;border-radius:999px;background:var(--green-900);color:#fff;font-size:14px;font-weight:600;font-family:'QazaqBaspa','Inter',sans-serif}
+  .back-btn:hover{opacity:.85}
+
+  /* Hero */
+  .page-hero{padding:140px 0 60px;background:linear-gradient(180deg,#0a4d3a,#06372a);color:#fff}
+  .page-hero .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-500);font-family:'QazaqBaspa','Inter',sans-serif}
+  .page-hero h1{font-size:clamp(36px,5vw,64px);margin-top:12px;line-height:1.05}
+  .page-hero p{margin-top:16px;font-size:16px;color:rgba(245,241,227,.75);max-width:560px}
+
+  /* Grid */
+  .news-page{padding:60px 0 100px}
+  .news-all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:900px){.news-all-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:580px){.news-all-grid{grid-template-columns:1fr}}
+
+  .news-card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .news-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .news-card .img{height:220px;background:linear-gradient(135deg,#0f6a4f,#06372a);position:relative;padding:18px;display:flex;align-items:flex-end;background-size:cover;background-position:center}
+  .news-card .img .date{background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;color:#fff}
+  .news-card .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+  .news-card .body h3{font-size:18px;margin-bottom:8px;color:var(--green-900)}
+  .news-card .body p{color:var(--ink-500);font-size:14px;margin:0;flex:1}
+  .news-card .eyebrow{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--green-700);margin-bottom:6px;font-family:'QazaqBaspa','Inter',sans-serif}
+
+  .feat-card{grid-column:1 / -1;display:grid;grid-template-columns:1.4fr 1fr;border-radius:28px}
+  .feat-card .img{height:360px;border-radius:0}
+  .feat-card .body{padding:36px 36px 36px}
+  .feat-card .body h3{font-size:28px}
+  @media(max-width:900px){.feat-card{grid-template-columns:1fr}.feat-card .img{height:240px}}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">
+        <img src="images/waqf.PNG" alt="УАҚЫП" style="width:100%;height:100%;object-fit:contain;border-radius:8px"/>
+      </div>
+      <div>УАҚЫП<small>WAQF · QMDB</small></div>
+    </a>
+    <a href="index.html" class="back-btn">← Басты бетке</a>
+  </nav>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Жаңалықтар</span>
+    <h1>Қордың соңғы оқиғалары</h1>
+    <p>Жаңа мешіттер, ашылған бағдарламалар, серіктестіктер және кездесулер — барлық жаңалықтарды бір жерден.</p>
+  </div>
+</div>
+
+<section class="news-page">
+  <div class="container">
+    <div class="news-all-grid" id="allNewsGrid">
+      <!-- загружается из _data/news.json -->
+    </div>
+  </div>
+</section>
+
+<script>
+  const bgColors = [
+    'linear-gradient(135deg,#0f6a4f,#06372a)',
+    'linear-gradient(135deg,#198463,#0a4d3a)',
+    'linear-gradient(135deg,#27a07b,#0f6a4f)',
+    'linear-gradient(135deg,#314940,#0c1c17)',
+    'linear-gradient(135deg,#c9a14a,#a07830)'
+  ];
+
+  fetch('_data/news.json')
+    .then(r => r.json())
+    .then(news => {
+      const grid = document.getElementById('allNewsGrid');
+      grid.innerHTML = news.map((n, i) => {
+        const bg = n.image ? `url('${n.image}') center/cover` : bgColors[i % bgColors.length];
+        const cat = n.category ? `<div class="eyebrow">${n.category}</div>` : '';
+        if (n.featured) {
+          return `<article class="news-card feat-card">
+            <div class="img" style="background:${bg}"><span class="date">${n.date}</span></div>
+            <div class="body">${cat}<h3>${n.title}</h3><p>${n.description}</p></div>
+          </article>`;
+        }
+        return `<article class="news-card">
+          <div class="img" style="background:${bg}"><span class="date">${n.date}</span></div>
+          <div class="body">${cat}<h3>${n.title}</h3><p>${n.description}</p></div>
+        </article>`;
+      }).join('');
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
