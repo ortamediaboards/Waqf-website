@@ -23,8 +23,7 @@ collections:
               - { label: "Мекенжай", name: "address", widget: "string" }
               - { label: "Телефон", name: "phone", widget: "string" }
               - { label: "Email", name: "email", widget: "string" }
-
-          - label: "Қор статистикасы (Hero)"
+          - label: "Қор статистикасы"
             name: "stats"
             widget: "object"
             fields:
@@ -32,8 +31,7 @@ collections:
               - { label: "Облыстық өкілдік", name: "regions", widget: "string" }
               - { label: "Тіркелген уақып", name: "waqfs", widget: "string" }
               - { label: "Жыл бойғы қаражат", name: "funds", widget: "string" }
-
-          - label: "Қор қазынасы (мониторинг карточкасы)"
+          - label: "Қор қазынасы"
             name: "treasury"
             widget: "object"
             fields:
@@ -44,8 +42,7 @@ collections:
               - { label: "Қайырымдылық %", name: "charity", widget: "string" }
               - { label: "Имамдар қоры %", name: "imams", widget: "string" }
               - { label: "Резерв %", name: "reserve", widget: "string" }
-
-          - label: "Серіктес BCC Bank статистика"
+          - label: "BCC Bank серіктес"
             name: "partner"
             widget: "object"
             fields:
@@ -53,36 +50,39 @@ collections:
 
   - name: "projects"
     label: "Жобалар"
-    file: "_data/projects.json"
-    format: json
-    label_singular: "Жоба"
-    fields:
-      - label: "Жобалар тізімі"
-        name: "projects"
-        widget: "list"
+    files:
+      - name: "projects_list"
+        label: "Жобалар тізімі"
+        file: "_data/projects.json"
+        format: json
         fields:
-          - { label: "Тақырып (тег)", name: "tag", widget: "string" }
-          - { label: "Атауы", name: "title", widget: "string" }
-          - { label: "Сипаттама", name: "description", widget: "text" }
-          - { label: "Прогресс (%)", name: "progress", widget: "number", min: 0, max: 100 }
-          - { label: "Сол жақ мета (мысалы: 72% орындалды)", name: "meta_left", widget: "string" }
-          - { label: "Оң жақ мета (мысалы: ₸ 280 / 390 млн)", name: "meta_right", widget: "string" }
-          - { label: "Фотосурет", name: "image", widget: "image", required: false }
+          - label: "Жобалар"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Тақырып (тег)", name: "tag", widget: "string" }
+              - { label: "Атауы", name: "title", widget: "string" }
+              - { label: "Сипаттама", name: "description", widget: "text" }
+              - { label: "Прогресс (%)", name: "progress", widget: "number", value_type: "int", min: 0, max: 100 }
+              - { label: "Сол жақ мета", name: "meta_left", widget: "string" }
+              - { label: "Оң жақ мета", name: "meta_right", widget: "string" }
+              - { label: "Фотосурет", name: "image", widget: "image", required: false, default: "" }
 
   - name: "news"
     label: "Жаңалықтар"
-    file: "_data/news.json"
-    format: json
-    label_singular: "Жаңалық"
-    fields:
-      - label: "Жаңалықтар тізімі"
-        name: "news"
-        widget: "list"
+    files:
+      - name: "news_list"
+        label: "Жаңалықтар тізімі"
+        file: "_data/news.json"
+        format: json
         fields:
-          - { label: "Күні (мысалы: 28 сәуір 2026)", name: "date", widget: "string" }
-          - { label: "Басты жаңалық па?", name: "featured", widget: "boolean", default: false }
-          - { label: "Санат (мысалы: Басты жаңалық)", name: "category", widget: "string", required: false }
-          - { label: "Тақырыбы", name: "title", widget: "string" }
-          - { label: "Қысқаша мәтін", name: "description", widget: "text" }
-          - { label: "Толық мәтін", name: "body", widget: "markdown", required: false }
-          - { label: "Фотосурет", name: "image", widget: "image", required: false }
+          - label: "Жаңалықтар"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Күні", name: "date", widget: "string" }
+              - { label: "Басты жаңалық па?", name: "featured", widget: "boolean", default: false }
+              - { label: "Санат", name: "category", widget: "string", required: false, default: "" }
+              - { label: "Тақырыбы", name: "title", widget: "string" }
+              - { label: "Қысқаша мәтін", name: "description", widget: "text" }
+              - { label: "Фотосурет", name: "image", widget: "image", required: false, default: "" }

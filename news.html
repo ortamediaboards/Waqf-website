@@ -102,7 +102,7 @@
 
   fetch('_data/news.json')
     .then(r => r.json())
-    .then(news => {
+    .then(data => { const news = data.items || data;
       const grid = document.getElementById('allNewsGrid');
       grid.innerHTML = news.map((n, i) => {
         const bg = n.image ? `url('${n.image}') center/cover` : bgColors[i % bgColors.length];

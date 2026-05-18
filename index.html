@@ -1164,7 +1164,7 @@
   // Загружаем и рендерим проекты
   fetch('_data/projects.json')
     .then(r => r.json())
-    .then(projects => {
+    .then(data => { const projects = data.items || data;
       const grid = document.getElementById('projGrid');
       if (!grid) return;
       grid.innerHTML = projects.map(p => {
@@ -1187,7 +1187,7 @@
   // Загружаем и рендерим новости (только первые 3)
   fetch('_data/news.json')
     .then(r => r.json())
-    .then(news => {
+    .then(data => { const news = data.items || data;
       const grid = document.getElementById('newsGrid');
       if (!grid) return;
       const bgColors = ['linear-gradient(135deg,#0f6a4f,#06372a)','linear-gradient(135deg,#198463,#0a4d3a)','linear-gradient(135deg,#27a07b,#0f6a4f)'];
